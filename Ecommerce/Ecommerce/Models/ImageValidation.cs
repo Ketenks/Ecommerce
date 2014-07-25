@@ -13,7 +13,7 @@ namespace Ecommerce.Models
     {
         [Required]
         public int ProductID { get; set; }
-        [Required, MaxLength(500)]
+
         public string ImageURL { get; set; }
         [Required, MaxLength(200)]
         public string Description { get; set; }

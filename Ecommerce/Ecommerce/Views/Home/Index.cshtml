@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Ecommerce.Models.Product>
+@{
     ViewBag.Title = "Home Page";
 }
 @section featured {
@@ -17,6 +18,34 @@
             </p>
         </div>
     </section>
+}
+@foreach(var product in Model){
+    
+   <a href="@Url.Action("ByProduct", "Shop", new {id = product.ProductID})"> 
+<div class="product">
+    
+      
+          <div> 
+         <h3>@product.Name</h3>
+        @* show the first product image, if it has an image *@
+        @if (product.Images.Any())
+        {
+            <div class="mainImage">
+            <img src="@product.Images.First().ImageURL" />
+                </div>
+        }
+    </div>
+    <div>
+       
+        <br />
+        WAS @product.ListPrice.ToString("c")/lb NOW @product.UnitPrice.ToString("c")/lb
+        <br />
+        A Savings of @((product.ListPrice - product.UnitPrice).ToString("c"))/lb
+    </div>
+    
+</div>
+
+   </a>
 }
 <h3>We suggest the following:</h3>
 <ol class="round">

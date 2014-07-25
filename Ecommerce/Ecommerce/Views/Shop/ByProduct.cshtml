@@ -1,0 +1,71 @@
+﻿@model Ecommerce.Models.Product
+
+@{
+    ViewBag.Title = "ByProduct";
+}
+
+<h1>@Model.Category.Name</h1>
+
+
+    <h2>@Model.Name</h2><hr />
+<div class="productView">
+<div class="imageContainer">
+ @if (Model.Images.Any())
+        {
+     <div class="imageView">
+     <div class="mainImage">
+            <img src="@Model.Images.First().ImageURL" />
+         </div>
+            @for (int i = 0; i < Model.Images.Count(); i++)
+            {
+                <div class="imageTabs" >
+                    <img data-confNum="@i" src="@Model.Images.ToList()[i].ImageURL" />
+                </div>
+            }
+         </div>
+        }
+</div>
+
+ <div class="pricingField">
+     <div class="unitPrice">
+         @Model.UnitPrice.ToString("c")<span>/lb</span>
+     </div>
+
+       <div class="pricing">
+        <br />
+        WAS @Model.ListPrice.ToString("c")/lb<br /> NOW @Model.UnitPrice.ToString("c")/lb
+           <br />
+        A Savings of @((Model.ListPrice - Model.UnitPrice).ToString("c"))/lb
+           </div>
+
+    </div>
+    <div class="cart">
+        <input type="button" value="Add to Cart" />
+    </div>
+    <div class="inStock">
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InStock)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InStock)
+    </div>
+        </div>
+    </div>
+<div class="descTitle">
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+
+</div>
+<div class="descField">
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    </div>
+
+
+    
+
+    
+
+

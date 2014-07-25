@@ -189,6 +189,7 @@
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,6 +234,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\1EcommerceLogo.png" />
+    <Content Include="Content\Images\EcommerceProduceStore.png" />
+    <Content Include="Content\Images\Fruits\goldengala.png" />
+    <Content Include="Content\Images\Roots\brownpotatoes.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -386,9 +391,14 @@
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Shop\ByProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Exotic\" />
+    <Folder Include="Content\Images\Herbs\" />
+    <Folder Include="Content\Images\Juices\" />
+    <Folder Include="Content\Images\Vegetables\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

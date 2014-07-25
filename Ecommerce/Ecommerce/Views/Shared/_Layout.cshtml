@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <title>@ViewBag.Title</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
@@ -12,7 +12,7 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                    <p class="site-title"><img style="margin:-100px 0 -100px 0; height:160px; width:auto;" src="/Content/Images/1EcommerceLogo.png" alt="" /></p>
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -24,11 +24,11 @@
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            <li>@Html.ActionLink("Supplier", "Index", "Supplier")</li>
-                            <li>@Html.ActionLink("Image", "Index", "Image")</li>
-                            <li>@Html.ActionLink("Product", "Index", "Product")</li>
-                            <li>@Html.ActionLink("Category", "Index", "Category")</li>
-                            <li>@Html.ActionLink("Review", "Index", "Review")</li>
+                            <li>@Html.ActionLink("Suppliers", "Index", "Supplier")</li>
+                            <li>@Html.ActionLink("Images", "Index", "Image")</li>
+                            <li>@Html.ActionLink("Products", "Index", "Product")</li>
+                            <li>@Html.ActionLink("Categories", "Index", "Category")</li>
+                            <li>@Html.ActionLink("Reviews", "Index", "Review")</li>
 
                         </ul>
                     </nav>
