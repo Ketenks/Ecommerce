@@ -16,7 +16,7 @@ namespace Ecommerce.Models
     {
         public Category()
         {
-            this.SubCategories = new HashSet<Category>();
+            this.Categories = new HashSet<Category>();
             this.Products = new HashSet<Product>();
         }
     
@@ -24,7 +24,7 @@ namespace Ecommerce.Models
         public string Name { get; set; }
         public Nullable<int> ParentID { get; set; }
     
-        public virtual ICollection<Category> SubCategories { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
         public virtual Category ParentCategory { get; set; }
         public virtual ICollection<Product> Products { get; set; }
     }

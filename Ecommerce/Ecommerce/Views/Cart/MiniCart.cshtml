@@ -1,0 +1,14 @@
+﻿@model Ecommerce.Models.Order
+
+<div class="miniCart">
+    <div class="minImage">
+        <img src="../../Content/Images/miniCartColored.png" alt="" /><span>(View Cart)</span>
+    </div>
+    <div class="cartCount">
+        <span>Your cart has @Model.OrderLines.Count() unique items with a total quantity of @Model.OrderLines.Sum(x => x.Qty).</span>
+    </div>
+    <div class="cartPrice">
+        <span>Total Price: @Model.Total.ToString("c")</span>
+    </div>
+
+</div>

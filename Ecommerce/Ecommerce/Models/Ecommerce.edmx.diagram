@@ -4,17 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="05d89607d70e41f09355a411fc6667d7" Name="Diagram1">
-        <EntityTypeShape EntityType="EcommerceModel.Category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EcommerceModel.Image" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EcommerceModel.Product" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="EcommerceModel.Review" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EcommerceModel.Supplier" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+      <Diagram DiagramId="826164f03af24fe490234048f2b9e06c" Name="Diagram1">
+        <EntityTypeShape EntityType="EcommerceModel.Address" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Category" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Image" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.OrderLine" Width="1.5" PointX="5.625" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Order" Width="1.5" PointX="9.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Payment" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Review" Width="1.5" PointX="1" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EcommerceModel.Supplier" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="EcommerceModel.FK_Orders_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_Orders_Addresses1" ManuallyRouted="false" />
         <AssociationConnector Association="EcommerceModel.FK_Categories_Categories1" ManuallyRouted="false" />
-        <AssociationConnector Association="EcommerceModel.FK_Products_Categories" ManuallyRouted="false" />
-        <AssociationConnector Association="EcommerceModel.FK_Images_Products" ManuallyRouted="false" />
-        <AssociationConnector Association="EcommerceModel.FK_Products_Suppliers" ManuallyRouted="false" />
-        <AssociationConnector Association="EcommerceModel.FK_Reviews_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_OrderLines_Orders1" ManuallyRouted="false" />
+        <AssociationConnector Association="EcommerceModel.FK_Orders_Payments" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EcommerceModel.Product" Width="1.5" PointX="3" PointY="3.625" />
+        <AssociationConnector Association="EcommerceModel.FK_Products_Categories" />
+        <AssociationConnector Association="EcommerceModel.FK_Images_Products" />
+        <AssociationConnector Association="EcommerceModel.FK_OrderLines_Products" />
+        <AssociationConnector Association="EcommerceModel.FK_Products_Suppliers" />
+        <AssociationConnector Association="EcommerceModel.FK_Reviews_Products" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

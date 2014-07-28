@@ -12,23 +12,30 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title"><img style="margin:-100px 0 -100px 0; height:160px; width:auto;" src="/Content/Images/1EcommerceLogo.png" alt="" /></p>
+                    <img src="/Content/Images/1EcommerceLogo.png" alt="Logo" />
                 </div>
                 <div class="float-right">
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
+                    <div class="mainMiniCart">
+                        @Html.Action("MiniCart", "Cart")
+                    </div>
                     <nav>
                         <ul id="menu">
 
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                            @if(Request.IsAuthenticated && User.IsInRole("admin"))
+                            {
                             <li>@Html.ActionLink("Suppliers", "Index", "Supplier")</li>
                             <li>@Html.ActionLink("Images", "Index", "Image")</li>
                             <li>@Html.ActionLink("Products", "Index", "Product")</li>
                             <li>@Html.ActionLink("Categories", "Index", "Category")</li>
                             <li>@Html.ActionLink("Reviews", "Index", "Review")</li>
+                            }
 
                         </ul>
                     </nav>
@@ -39,8 +46,11 @@
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
+                
             </section>
+             
         </div>
+       
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
@@ -51,5 +61,6 @@
 
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
+        
     </body>
 </html>

@@ -9,9 +9,11 @@ using Ecommerce.Models;
 
 namespace Ecommerce.Controllers
 {
-    public class SupplierController : Controller
+    [Authorize(Roles = "admin")]
+    public class SupplierController : BaseController
     {
-        private EcommerceEntities db = new EcommerceEntities();
+        
+       
 
         // GET: /Supplier/
 

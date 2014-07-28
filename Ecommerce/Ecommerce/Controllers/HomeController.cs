@@ -5,11 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using Ecommerce.Models;
 
+
 namespace Ecommerce.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private EcommerceEntities db = new EcommerceEntities();
+       
 
         public ActionResult Index()
         {
@@ -30,5 +31,6 @@ namespace Ecommerce.Controllers
 
             return View();
         }
+       
     }
 }

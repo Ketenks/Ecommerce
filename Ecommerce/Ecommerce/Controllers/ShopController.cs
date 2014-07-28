@@ -7,9 +7,9 @@ using Ecommerce.Models;
 
 namespace Ecommerce.Controllers
 {
-    public class ShopController : Controller
+    public class ShopController : BaseController
     {
-        public EcommerceEntities db = new EcommerceEntities();
+        
         //
         // GET: /Shop/
 

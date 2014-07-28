@@ -9,9 +9,10 @@ using Ecommerce.Models;
 
 namespace Ecommerce.Controllers
 {
-    public class CategoryController : Controller
+    [Authorize(Roles="admin")]
+    public class CategoryController : BaseController
     {
-        private EcommerceEntities db = new EcommerceEntities();
+        
 
         //
         // GET: /Category/

@@ -9,9 +9,10 @@ using Ecommerce.Models;
 
 namespace Ecommerce.Controllers
 {
-    public class ReviewController : Controller
+    [Authorize(Roles = "admin")]
+    public class ReviewController : BaseController
     {
-        private EcommerceEntities db = new EcommerceEntities();
+        
 
         //
         // GET: /Review/

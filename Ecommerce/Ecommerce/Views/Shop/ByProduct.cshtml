@@ -3,67 +3,93 @@
 @{
     ViewBag.Title = "ByProduct";
 }
+<div class="byProduct">
+    <h1>@Model.Category.Name</h1>
 
-<h1>@Model.Category.Name</h1>
 
+    <h2>@Model.Name</h2>
+    <div class="productDetails">
+        <div class="productPane">
 
-    <h2>@Model.Name</h2><hr />
-<div class="productView">
-<div class="imageContainer">
- @if (Model.Images.Any())
-        {
-     <div class="imageView">
-     <div class="mainImage">
-            <img src="@Model.Images.First().ImageURL" />
-         </div>
-            @for (int i = 0; i < Model.Images.Count(); i++)
+            @if (Model.Images.Any())
             {
-                <div class="imageTabs" >
-                    <img data-confNum="@i" src="@Model.Images.ToList()[i].ImageURL" />
+                <div class="imageView">
+                    <div class="mainImage">
+                        <img src="@Model.Images.ToList()[0].ImageURL" />
+                    </div>
+
+                    @for (int i = 0; i < Model.Images.Count; i++)
+                    {
+@*<div class="mainImage">
+                    <img src="@Model.Images.ToList()[0].ImageURL"
+                </div>*@
+                        <div class="imageTabs">
+
+                            <img src="@Model.Images.ToList()[i].ImageURL" />
+                        </div>
+                    }
+
                 </div>
             }
-         </div>
-        }
-</div>
 
- <div class="pricingField">
-     <div class="unitPrice">
-         @Model.UnitPrice.ToString("c")<span>/lb</span>
-     </div>
+            <div class="priceDetails">
+                <div class="pricingField">
+                    <div class="activePrice">
+                        @Model.UnitPrice.ToString("c")<span>/lb</span>
+                    </div>
 
-       <div class="pricing">
-        <br />
-        WAS @Model.ListPrice.ToString("c")/lb<br /> NOW @Model.UnitPrice.ToString("c")/lb
-           <br />
-        A Savings of @((Model.ListPrice - Model.UnitPrice).ToString("c"))/lb
-           </div>
+                    <div class="pricing">
 
-    </div>
-    <div class="cart">
-        <input type="button" value="Add to Cart" />
-    </div>
-    <div class="inStock">
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.InStock)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.InStock)
-    </div>
+                        <div class="listPrice">
+                            WAS @Model.ListPrice.ToString("c")/lb
+                        </div>
+                        <div class="unitPrice">NOW @Model.UnitPrice.ToString("c")/lb</div>
+
+                        <div class="savings">
+                            A Savings of @((Model.ListPrice - Model.UnitPrice).ToString("c"))/lb
+
+                        </div>
+                    </div>
+                </div>
+                @using (Html.BeginForm())
+                {
+
+               
+                    <div class="quantity-field">
+                        <div class="qtyTitle">
+                            <span>Quantity</span>
+                        </div>
+                        <div class="inputNum">
+                            <input type="number" value="1" max="100" min="1" />
+
+                        </div>
+
+                    </div>
+                    <div class="addToCart">
+
+                        <input type="submit" value="Add to Cart" />
+                    </div>
+                    @Html.ActionLink("Add", "Shared", new Ecommerce.Models.Product { ProductID = Model.ProductID})
+                    }
+            </div>
+
+        </div>
+
+        <div class="descField">
+            <div class="descTitle">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Description)
+                </div>
+
+            </div>
+            <div class="descText">
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Description)
+                </div>
+            </div>
         </div>
     </div>
-<div class="descTitle">
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Description)
-    </div>
-
 </div>
-<div class="descField">
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-    </div>
-
-
     
 
     

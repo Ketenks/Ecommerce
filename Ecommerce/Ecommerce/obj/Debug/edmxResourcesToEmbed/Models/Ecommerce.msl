@@ -1,6 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="EcommerceModelStoreContainer" CdmEntityContainer="EcommerceEntities">
+  <EntityContainerMapping StorageEntityContainer="EcommerceModelStoreContainer" CdmEntityContainer="EcommerceEntities1">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="EcommerceModel.Address">
+        <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="EcommerceModel.Category">
         <MappingFragment StoreEntitySet="Categories">
@@ -20,17 +33,44 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="EcommerceModel.Product">
-        <MappingFragment StoreEntitySet="Products">
+    <EntitySetMapping Name="OrderLines">
+      <EntityTypeMapping TypeName="EcommerceModel.OrderLine">
+        <MappingFragment StoreEntitySet="OrderLines">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
           <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
-          <ScalarProperty Name="InStock" ColumnName="InStock" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="EcommerceModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="BillingAddressID" ColumnName="BillingAddressID" />
+          <ScalarProperty Name="MailingAddressID" ColumnName="MailingAddressID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="ShippingTotal" ColumnName="ShippingTotal" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+          <ScalarProperty Name="DateShipped" ColumnName="DateShipped" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="EcommerceModel.Payment">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="CCNum" ColumnName="CCNum" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="ExpiryMonth" ColumnName="ExpiryMonth" />
+          <ScalarProperty Name="ExpiryYear" ColumnName="ExpiryYear" />
+          <ScalarProperty Name="TransacNum" ColumnName="TransacNum" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -53,6 +93,20 @@
           <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="EcommerceModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

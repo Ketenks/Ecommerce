@@ -184,6 +184,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
@@ -196,6 +198,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Address.cs">
+      <DependentUpon>Ecommerce.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Category.cs">
       <DependentUpon>Ecommerce.tt</DependentUpon>
     </Compile>
@@ -219,6 +224,17 @@
       <DependentUpon>Ecommerce.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ImageValidation.cs" />
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Ecommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderLine.cs">
+      <DependentUpon>Ecommerce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderLinesValidation.cs" />
+    <Compile Include="Models\OrderValidation.cs" />
+    <Compile Include="Models\Payment.cs">
+      <DependentUpon>Ecommerce.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Product.cs">
       <DependentUpon>Ecommerce.tt</DependentUpon>
     </Compile>
@@ -236,7 +252,10 @@
   <ItemGroup>
     <Content Include="Content\Images\1EcommerceLogo.png" />
     <Content Include="Content\Images\EcommerceProduceStore.png" />
+    <Content Include="Content\Images\Fruits\galaApples.png" />
     <Content Include="Content\Images\Fruits\goldengala.png" />
+    <Content Include="Content\Images\miniCart.png" />
+    <Content Include="Content\Images\miniCartColored.png" />
     <Content Include="Content\Images\Roots\brownpotatoes.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -356,7 +375,7 @@
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Cart\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -392,6 +411,10 @@
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Shop\ByProduct.cshtml" />
+    <Content Include="Views\Cart\MiniCart.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Shared\Add.cshtml" />
+    <Content Include="Views\Cart\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

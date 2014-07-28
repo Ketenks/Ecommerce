@@ -13,7 +13,10 @@ body {
     margin: 0;
     padding: 0;
 }
-
+div {
+    display:list-item;
+    list-style:none;
+}
 a {
     color: #333;
     outline: none;
@@ -61,8 +64,7 @@ mark {
 h1, h2, h3,
 h4, h5, h6 {
     color: #000;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    
 }
 
 h1 {
@@ -95,6 +97,7 @@ h5, h6 {
 ----------------------------------------------------------*/
 .content-wrapper {
     margin: 0 auto;
+    width:100%;
     max-width: 960px;
 }
 
@@ -106,12 +109,20 @@ h5, h6 {
 
     .main-content {
         background: url("../Images/accent.png") no-repeat;
-        padding-left: 10px;
+        
         padding-top: 30px;
     }
 
     .featured + .main-content {
         background: url("../Images/heroAccent.png") no-repeat;
+    }
+
+header .content-wrapper .float-left img {
+    
+        margin:-35% 0;
+        padding-left:1px;
+        width:auto;
+        height:200px;
     }
 
 header .content-wrapper {
@@ -200,9 +211,16 @@ ul#menu {
         }
 
         ul#menu li a:hover {
-            color: #333;
+            color: #2E358F;
             text-decoration: none;
         }
+        ul#menu li a:active {
+            color: #8EC741;
+        }
+        ul#menu li a:target {
+            color:#8EC741;
+        }
+        
 
 
 /* page elements
@@ -598,6 +616,7 @@ tr.pager td {
     header .float-right {
         float: none;
     }
+    
 
     /* logo */
     header .site-title {
@@ -661,12 +680,12 @@ tr.pager td {
     }
 
     .content-wrapper {
-        padding-right: 10px;
-        padding-left: 10px;
+        /*padding-right: 10px;
+        padding-left: 10px;*/
     }
 
     .featured .content-wrapper {
-        padding: 10px;
+        /*padding: 10px;*/
     }
 
     /* page content */
@@ -757,98 +776,265 @@ tr.pager td {
 
                         /* Begin Ecommerce Content Styling
 ----------------------------------------------------------*/
-.productView {
-margin:0;
-    padding:3px;
+/*this centers the element into the absolute center of its parent*/
+.absolute-center {
+    postion:absolute;
+    margin:auto;
+    padding:0;
+    top:0; 
+    left:0; 
+    bottom:0; 
+    right:0;
+}
+/*set this style for what link is currently active*/
+.active {
+    
+    background-color:#8EC741;
+}
+.active1{
+    color:#8EC741;
+}
+
+/*restyle the headers------------------------*/
+h1 {
+    margin:3px;
+    padding:0;
+}
+
+h2 {
+    margin: 0 0 5px 0;
+    padding:0 0 5px 0;
+    border-bottom:1px solid;
+}
+/*Begin Styling the minicart view page - /Cart/MiniCart-------------------------------*/
+/*the master div*/
+.mainMiniCart {
+    
+    position:absolute;
+    right:60px;
+    height:800px;
+    width:200px;
+    margin:0 0 0 -100px;
+    padding:0;
+}
+.miniCart {
+    text-align:center;
+    position:relative;
+    float:left;
+    /*left:1300px;
+    right:2%;*/
+    width:250px;
+    height:auto;
+    border:1px solid;
+}
+.miniCart .minImage {
+    
+    float:left;
+    margin:0;
+    padding:0;
+    border-right:1px solid;
+}
+.miniCart .minImage img {
+    float:left;
+    width:100px;
+    
+}
+.miniCart .minImage img:hover {
+    background-color:rgba(100, 100, 250, 0.7);
+    
+}
+.miniCart .minImage img:active {
+    background-color:rgba(50, 200, 50, 0.8);
+    
+}
+.miniCart .minImage span {
+    margin:0 0 0 15px;
+    float:left; 
+    color:#999;
+    clear:both;
+}
+.miniCart .cartPrice {
+    position:absolute;
+    bottom:3px;
+    right:25px;
+}
+
+/*Begin Styling the product view page - /Shop/ByProduct-------------------------------*/
+/*the master div*/
+.byProduct {
+    float:left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    
+}
+/*this div holds all the information of the product, not the titles*/
+.productDetails {
+    margin:0 2%;
+    padding:0;
+    
+    width:auto;
+    height:auto;
+}
+
+/*style the master div for the description*/
+.descField {
+    float:left;
+    width:auto;
+    height:auto;
+   
+
+}
+/*style the title of a description*/
+.descTitle {
+    text-decoration:underline;
+    font-size:large;
+    margin:0 0 0 20px;
+    padding:0;
+    
+}
+/*style the actual description*/
+.descText {
+    
+    width:400px;
+    height:auto;
+    padding:0;
+    margin:0;
+    
+}
+/*this div holds all the information but the description*/
+.productPane {
+    margin:0;
+    padding:7px;
+    
     position:relative;
     float:right;
     border:1px solid;
     width:500px;
     height:auto;
-}
-.descTitle {
-    text-decoration:underline;
-    font-size:large;
-    margin:10px;
-    padding:0;
-}
-.descField {
-    position:relative;
-    float:left;
-    width:400px;
-    height:auto;
-    padding:0;
-    margin:0;
-}
-
-.imageContainer {
-    margin:0;
-    padding:0;
-    width:300px;
-    height:auto;
-}
-
-.imageView {width:auto;
-    height:auto;
-    position:relative;
-    float:left;
-    margin:0;
-    padding:10px 20px;
-    border-right: 1px solid;
     
 }
-.mainImage {
+/*style the master div for the image group: big image, little images*/
+.imageView {
+    position: relative;
+    float: left;
+    padding: 0;
     margin:0;
-    padding:0;
+    width:300px;
+    
 }
+/*style the big showcase image*/
 .mainImage img{
+    
     width:300px;
     height:auto;
     margin:0;
     padding:0;
+
     
 }
+/*this is for all the little images container*/
 .imageTabs {
     position:relative;
-    float:right;
+    float:left;
      margin:0;
      padding:0 15px 0 0;
-    width:60px;
+    width:auto;
     height:auto;
+    
 }
+/*this is for all the little images*/
 .imageTabs img{
     position:relative;
-    float:right;
+    float:left;
     margin:0;
     padding:3px;
-    width:50px;
-    height:auto;
-       
-}
-.pricingField {
-    margin:0;
-    padding:0;
-    position:relative;
-    float:right;
+    width:auto;
+    height:40px;
+      
 }
 
-.unitPrice {
+.imageTabs img:hover {
+    background-color:#8EC741;
+}
+.imageTabs img:active {
+    background-color:#2E358F;
+}
+/*the master div for the pricing information*/
+.priceDetails {
+    position:relative;
+    float:right;
+    width:179px;
+    height:auto;
+    margin-left:10px;
+    
+    border-left: 1px solid;
+}
+/*this holds all that pricing information*/
+.pricingField {
+    text-align:center;
+   
+    margin:0;
+    padding:0;
+    
+}
+/*this goes to the large price at top*/
+.activePrice {
     font-size:x-large;
     font-weight:bold;
 }
+/*this is the master div for the price changes*/
 .pricing {
+    margin:20px 0 0 0;
+    padding:0;
+    
+}
+/*what the price used to be*/
+.listPrice {
     margin:0;
     padding:0;
+    font-weight:bold;
+    color:maroon;
 }
-.cart {
-    position:relative;
-   float:right;
-    margin:25px;
+
+.listPrice span {
+    text-decoration:line-through;
+}
+/*what the price is now*/
+.unitPrice {
+    margin:0;
     padding:0;
+    font-weight:bold;
+    color:forestgreen;
 }
-.inStock {
-    position:relative;
-    float:right;
-    margin:0 50px;
+/*the difference of the two*/
+.savings {
+    margin:10px 0 0 0;
     padding:0;
+    font-weight:bold;
+    color:orange;
 }
+/*master div for how much of the item they would like*/
+.quantity-field {
+   
+    margin:20px 0;
+    padding:0 0 0 35%;
+   
+}
+.inputNum input {
+    margin:0;
+    width:40%;
+}
+/*styling add to cart button*/
+.addToCart {
+    
+    margin:30px 0;
+    padding:0 0 0 23%;
+    
+}
+.addToCart input {
+  margin:0;
+}
+
+

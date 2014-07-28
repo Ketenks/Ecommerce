@@ -403,5 +403,20 @@ namespace Ecommerce.Controllers
             }
         }
         #endregion
+
+        [AllowAnonymous]
+        public ActionResult Temp()
+        {
+            //create a new admin account
+            WebSecurity.CreateUserAndAccount("admin", "admin1");
+            //create what role we want
+            Roles.CreateRole("admin");
+            //add our user to the role
+            Roles.AddUserToRole("admin", "admin");
+            //return some content
+            return Content("OK");
+
+
+        }
     }
 }
